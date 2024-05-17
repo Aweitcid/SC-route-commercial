@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #321F63;
+    color: #FF00FA;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1800px; /* Ajuster la largeur maximale pour rendre le tableau plus large */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #2A5FD7;
+    text-align: center;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2A5FD7; /* Ensure the outer border is visible */
+}
+
+thead th, tfoot th, tbody td {
+    color: #FF00FA; /* Apply color to specific cells */
+    text-align: center; /* Center the text in cells */
+}
+
+tbody td {
+    background-color: #321F63; /* Background color for participant cells */
+    border: 1px solid #2A5FD7; /* Add inner grid */
+}
+
+thead th, tfoot th {
+    background-color: #2A5FD7;
+    color: #FF00FA; /* Ensure header/footer text color */
+}
+
+tfoot input[type="number"] {
+    color: #2A5FD7; /* Different color for inputs */
+}
+
+tfoot label {
+    display: none; /* Hide labels by default */
+    color: #FF00FA;
+    margin-top: 10px;
+    text-align: center;
+}
+
+tfoot span {
+    display: block; /* Block display for centering */
+}
+
+button {
+    background-color: #2A5FD7;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #FF00FA;
+}
+
+input[type="number"], input[type="time"], input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #2A5FD7;
+    color: #2A5FD7; /* Different color for inputs */
+}
+
+input[type="number"]:read-only, input[type="text"]:read-only {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+input[type="number"], input[type="time"] {
+    border-radius: 5px;
+}
+
+/* Specific style for the event duration table */
+.event-duration-table {
+    width: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #2A5FD7; /* Ensure the outer border is visible */
+}
+
+.event-duration-table th {
+    color: #FF00FA; /* Apply color to specific cells */
+    background-color: #2A5FD7; /* Background color for header */
+    border: 1px solid #2A5FD7; /* Add inner grid */
+    text-align: center; /* Center the text in cells */
+}
+
+.event-duration-table td {
+    color: #FF00FA; /* Apply color to specific cells */
+    background-color: #321F63; /* Background color for cells */
+    border: 1px solid #2A5FD7; /* Add inner grid */
+    text-align: center; /* Center the text in cells */
+}
+
+.event-duration-table td input {
+    background-color: #321F63; /* Background color for time inputs */
+    color: #FF00FA; /* Ensure text is readable on dark background */
+    border: none; /* Remove default border */
+}
+
+#duration {
+    background-color: #321F63; /* Background color for duration cell */
+    color: #FF00FA; /* Ensure text is readable on dark background */
+    text-align: center; /* Center the text in the cell */
+}
+
+/* Apply specific styles to the second row of the event duration table */
+.event-duration-table tbody tr:nth-child(2) td {
+    background-color: #321F63; /* Background color for second row cells */
+    color: #FF00FA; /* Text color for second row cells */
+}
+
+.event-duration-table tbody tr:nth-child(2) input {
+    background-color: #321F63; /* Background color for inputs in second row */
+    color: #FF00FA; /* Ensure text is readable on dark background */
+    border: none; /* Remove default border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Ensure the container is responsive */
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    button {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="number"], input[type="time"], input[type="text"] {
+        font-size: 12px;
+    }
+
+    table thead, table tbody, table tfoot, table tr, table td, table th {
+        display: block;
+    }
+
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid #2A5FD7;
+    }
+
+    table td {
+        border: none;
+        border-bottom: 1px solid #2A5FD7;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        color: #FF00FA;
+        font-weight: bold;
+    }
+
+    tfoot th {
+        display: block;
+        width: 100%;
+        text-align: center; /* Center the text in cells */
+    }
+
+    tfoot th:nth-child(odd) {
+        background-color: transparent;
+        color: #FF00FA;
+    }
+
+    tfoot label {
+        display: block; /* Show labels on small screens */
+    }
+
+    .mobile-label {
+        display: none; /* Hide specific mobile labels by default */
+    }
+
+    .mobile-only {
+        display: block; /* Show these labels only on small screens */
+    }
+}

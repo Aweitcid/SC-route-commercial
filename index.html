@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau d'Investissements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tableau d'Investissements</h1>
+        <table id="investment-table">
+            <thead>
+                <tr>
+                    <th>NOM</th>
+                    <th>Investissement</th>
+                    <th>Investissement Conseillé</th>
+                    <th>Pourcentage</th>
+                    <th>VENTE INITIAL</th>
+                    <th>VENTE BONUS</th>
+                    <th>BÉNÉFICE</th>
+                    <th>AUEC/HEURE</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <th>
+                        <label for="total-investment" class="mobile-only">Total Investissement</label>
+                        <span id="total-investment" data-label="Investissement Total">0</span>
+                    </th>
+                    <th>
+                        <label for="total-recommended-investment" class="mobile-only">Total Investissement Conseillé</label>
+                        <input type="number" id="total-recommended-investment" value="0" oninput="updateTable()">
+                    </th>
+                    <th>
+                        <label for="total-percentage" class="mobile-only">Total Pourcentage</label>
+                        <span id="total-percentage" data-label="Pourcentage Total">0</span>
+                    </th>
+                    <th>
+                        <label for="total-initial-sale" class="mobile-only">Total VENTE INITIAL</label>
+                        <input type="number" id="total-initial-sale" value="0" oninput="updateTable()">
+                    </th>
+                    <th>
+                        <label for="total-bonus-sale" class="mobile-only">Total VENTE BONUS</label>
+                        <input type="number" id="total-bonus-sale" value="0" oninput="updateTable()">
+                    </th>
+                    <th>
+                        <label for="total-profit" class="mobile-only">Total BÉNÉFICE</label>
+                        <span id="total-profit" data-label="Profit Total">0</span>
+                    </th>
+                    <th>
+                        <label for="total-hourly-profit" class="mobile-only">Total AUEC/HEURE</label>
+                        <span id="total-hourly-profit" data-label="Profit Horaire Total">0</span>
+                    </th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+        <button onclick="addParticipant()">Ajouter un participant</button>
+
+        <h1>Durée de l'Événement</h1>
+        <table class="event-duration-table">
+            <thead>
+                <tr>
+                    <th>Heure de début</th>
+                    <th>Heure de fin</th>
+                    <th>Durée</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="time" id="start-time" oninput="calculateDuration()"></td>
+                    <td><input type="time" id="end-time" oninput="calculateDuration()"></td>
+                    <td id="duration">0:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
